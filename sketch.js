@@ -40,7 +40,9 @@ window.addEventListener('message', function (event) {
 
 function setup() { 
     // ... (其他設置)
-    createCanvas(windowWidth / 2, windowHeight / 2); 
+    let canvasWidth = (windowWidth / 2) - 400;
+    let canvas = createCanvas(canvasWidth, 400); 
+    canvas.parent('p5Container'); // 將 Canvas 放入指定的 div
     background(255); 
     noLoop(); // 如果您希望分數只有在改變時才繪製，保留此行
 } 
@@ -106,3 +108,4 @@ function draw() {
     // 如果您想要更複雜的視覺效果，還可以根據分數修改線條粗細 (strokeWeight) 
     // 或使用 sin/cos 函數讓圖案的動畫效果有所不同 [8, 9]。
 }
+
